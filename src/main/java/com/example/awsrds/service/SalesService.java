@@ -33,4 +33,8 @@ public class SalesService {
 		return salesDao.update(s);
 	}
 	
+	public String delete(int id) {
+		return salesDao.delete(id);
+	}
+	
 }
