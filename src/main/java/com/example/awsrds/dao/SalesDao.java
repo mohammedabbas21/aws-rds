@@ -3,14 +3,14 @@ package com.example.awsrds.dao;
 
 import java.util.List;
 
+import com.example.awsrds.entities.Sales;
 
 
-
-public interface SalesDao<Sales> {
+public interface SalesDao {
 
 	Sales get(int id);
     List<Sales> getAll();
-    int save(Sales sale);
-    void update(Sales sale);
-    void delete(Sales sale);
+    Sales save(Sales sale);
+    Sales update(Sales sale);
+    String delete(int id);
 }

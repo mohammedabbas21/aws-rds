@@ -13,7 +13,7 @@ public class Sales {
 	}
 	
 	public Sales(int id, String item, String country, int quantity, float amount) {
-		super();
+	
 		this.id = id;
 		this.item = item;
 		this.country = country;
