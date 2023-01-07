@@ -1,5 +1,7 @@
 package com.example.awsrds.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class SalesService {
 		return salesDao.get(id);
 	}
 	
-	
+	public List<Sales> getAll(){
+		
+		return salesDao.getAll();
+	}
 	
 }

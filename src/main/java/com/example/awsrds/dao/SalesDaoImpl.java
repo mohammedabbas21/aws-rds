@@ -40,7 +40,7 @@ public class SalesDaoImpl implements SalesDao {
 	public List<Sales> getAll() {
 		// TODO Auto-generated method stub
 
-		return (List<Sales>) jdbcTemplate.queryForObject(GET_ALLSALES, (rs,rowNum)->{
+		return  jdbcTemplate.query(GET_ALLSALES, (rs,rowNum)->{
 			return new Sales(rs.getInt("id"),rs.getString("item"),rs.getString("country"),rs.getInt("quantity"),rs.getFloat("amount"));
 		});
 	}
