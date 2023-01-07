@@ -24,4 +24,13 @@ public class SalesService {
 		return salesDao.getAll();
 	}
 	
+	public Sales newsale(Sales s) {
+		
+		return salesDao.save(s);
+	}
+	
+	public String update(Sales s) {
+		return salesDao.update(s);
+	}
+	
 }

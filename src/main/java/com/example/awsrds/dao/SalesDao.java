@@ -11,6 +11,6 @@ public interface SalesDao {
 	Sales get(int id);
     List<Sales> getAll();
     Sales save(Sales sale);
-    Sales update(Sales sale);
+    String update(Sales sale);
     String delete(int id);
 }

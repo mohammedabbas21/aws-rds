@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,4 +41,14 @@ public class SalesController {
 		return service.getAll();
 	}
 	
+	@PostMapping("/newsale")
+	public Sales save(@RequestBody Sales s) {
+		
+		return service.newsale(s);
+	}
+	
+	@PutMapping("/update")
+	public String updateSale(@RequestBody Sales s) {
+		return service.update(s);
+	}
 }

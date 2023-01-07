@@ -18,7 +18,7 @@ public class SalesDaoImpl implements SalesDao {
 	
 	private static final String GET_SALE_BY_ID = "SELECT * FROM SALES WHERE ID=?";
 	private static final String DELETE_SALE_BY_ID = "DELETE FROM SALES WHERE ID=?";
-	private static final String UPDATE_SALE_BY_ID = "UPDATE SALES SET QUANTITY=? WHERE ID=?";
+	private static final String UPDATE_SALE_BY_ID = "UPDATE SALES SET item=? WHERE ID=?";
 	private static final String GET_ALLSALES = "SELECT * FROM SALES";
 	private static final String INSERT_SALE = "INSERT INTO SALES(ID,ITEM,COUNTRY,QUANTITY,AMOUNT) VALUES (?,?,?,?,?)";
 //	public SalesDaoImpl(JdbcTemplate jdbcTemplate) {
@@ -48,11 +48,11 @@ public class SalesDaoImpl implements SalesDao {
 
 
 	@Override
-	public Sales update(Sales sale) {
+	public String update(Sales sale) {
 		// TODO Auto-generated method stub
 		
-		jdbcTemplate.update(UPDATE_SALE_BY_ID, sale.getQuantity(),sale.getId());
-		return sale;
+		jdbcTemplate.update(UPDATE_SALE_BY_ID, sale.getItem(),sale.getId());
+		return "Update successful!";
 	}
 
 	@Override
