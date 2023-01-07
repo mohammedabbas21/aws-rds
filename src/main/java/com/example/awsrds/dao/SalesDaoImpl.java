@@ -1,12 +1,15 @@
 package com.example.awsrds.dao;
 
+import java.beans.JavaBean;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.example.awsrds.entities.Sales;
 
+@Component
 public class SalesDaoImpl implements SalesDao {
 	
 	@Autowired
