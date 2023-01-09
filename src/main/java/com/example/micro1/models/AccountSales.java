@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -41,6 +43,68 @@ public class AccountSales {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="update_date")
 	private Date updateDate;
+
+
+    @PrePersist
+    protected void onCreate() {
+    	updateDate = createDate = new Date();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+    	updateDate = new Date();
+    }
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getItem() {
+		return item;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
+	}
+
+	public int getBuyPrice() {
+		return buyPrice;
+	}
+
+	public void setBuyPrice(int buyPrice) {
+		this.buyPrice = buyPrice;
+	}
+
+	public int getSellPrice() {
+		return sellPrice;
+	}
+
+	public void setSellPrice(int sellPrice) {
+		this.sellPrice = sellPrice;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	
+	
 	
 	
 	
