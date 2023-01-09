@@ -1,10 +1,14 @@
 package com.example.micro1.service;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.micro1.models.AccountSales;
 import com.example.micro1.repository.AccountSalesRepository;
 
+@Service
 public class AccountSalesImpl implements AccountSalesInterface {
 
 	
@@ -31,8 +35,8 @@ public class AccountSalesImpl implements AccountSalesInterface {
 		newObj.setBuyPrice(s.getBuyPrice());
 		newObj.setSellPrice(s.getSellPrice());
 		newObj.setItem(s.getItem());
-		
-		return "Account with id" + s.getId() + " Deleted Successfully!";
+		repository.save(newObj);
+		return "Account with id" + s.getId() + " Updated Successfully!";
 	}
 
 	@Override

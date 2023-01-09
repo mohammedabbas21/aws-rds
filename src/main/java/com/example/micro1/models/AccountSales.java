@@ -11,6 +11,11 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -28,7 +33,10 @@ import lombok.NoArgsConstructor;
 public class AccountSales {
 
 	@Id
-	@GeneratedValue
+	
+	@NotNull(message="Id cannot be empty")
+	@Min(value=1,message="Id should be atleast 1")
+	@Max(value=9999,message="Id should be atmost 9999 ")
 	private int id;
 	private String item;
 	private int buyPrice;
